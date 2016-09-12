@@ -13,7 +13,12 @@ Description	: Hello World in C, Ansi style
 #include <stdlib.h>
 
 int main(void){
-	// you can write main(int argc, *argv[])
-	puts("hello World");
+	// you can write main(int arg,char *argv[])
+	printf("hello World \n");
+	int sum = 0;
+	for (int i=0;i<10;i++){
+		sum = sum + i;
+	}
+	printf("%d \n",sum);
 	return EXIT_SUCCESS;
 }
