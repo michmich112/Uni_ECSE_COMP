@@ -1,0 +1,4 @@
+# Makefile, executable and alle tmp files
+Makefile
+exec
+*.swp
