@@ -3,3 +3,4 @@ Makefile
 exec
 githelp
 *.swp
+.nfs*
