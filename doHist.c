@@ -2,7 +2,7 @@
 
 // We know that hist is a 256 wide array
 
-int size(char text[]){
+int size(char text[]){ //size function to get the size of an string
 	int start = 0;
 	char character = text[0];
 	while(character != '\0'){
@@ -12,7 +12,7 @@ int size(char text[]){
 	return start;
 }
 
-int getMax(char hist[]){
+int getMax(char hist[]){ //get the max occurence of one character as a baseline
 	int max = 0;
 	for(int i=0;i<256;i++){
 		if(hist[i]>max){max=hist[i];}
@@ -20,16 +20,16 @@ int getMax(char hist[]){
 	return max;
 }
 
-void doHist(char buffer[], char hist[]){
-	for(int i=0;i<256;i++){
+void doHist(char buffer[], char hist[]){ //doHist function 
+	for(int i=0;i<256;i++){ //we put every entry in the hist array to zero
 		hist[i]=0;
 	}
 	for(int i=0;i<size(buffer);i++){
-		hist[buffer[i]] += 1;
+		hist[buffer[i]] += 1; // we increment the value of hist[k] by one whenever we see a character with the acsii value of k
 	}
 }
 
-void displayHist(char hist[], int distinct_chars){
+void displayHist(char hist[], int distinct_chars){ //function to display our results
 	int max = getMax(hist);
 	int MAXSCALE = 25;
 	int barlength;
