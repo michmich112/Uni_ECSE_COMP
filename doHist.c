@@ -12,6 +12,14 @@ int size(char text[]){
 	return start;
 }
 
+int getMax(char hist[]){
+	int max = 0;
+	for(int i=0;i<256;i++){
+		if(hist[i]>max){max=hist[i];}
+	}
+	return max;
+}
+
 void doHist(char buffer[], char hist[]){
 	for(int i=0;i<256;i++){
 		hist[i]=0;
@@ -21,11 +29,23 @@ void doHist(char buffer[], char hist[]){
 	}
 }
 
+void displayHist(char hist[], int distinct_chars){
+	int max = getMax(hist);
+	int MAXSCALE = 25;
+	int barlength;
+	for(int i=0;i<256;i++){
+		if (hist[i] != 0){
+			barlength = (int)(((double)hist[i])/((double)max)*((double)MAXSCALE));
+			printf("%c \t [%d] \t",i,hist[i]);
+			for(int i=0;i<barlength;i++){printf("*");}
+			printf("\n");
+		}
+	}
+}
+
 int main(int argc, char *argv[]){
 	char text[] = "Jesuisbobdacords";
 	char hist[256];
 	doHist(text,hist);
-	for (int i=0;i<256;i++){
-		printf("%d \t",hist[i]);
-	}
+	displayHist(hist,0);
 }
