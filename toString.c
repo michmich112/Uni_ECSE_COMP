@@ -1,3 +1,14 @@
+/*
+ * ==================================================================
+ * Name			: toString.c
+ * Author		: Michel Cantacuzene
+ * Version		: 0.1
+ * Copyright		: GNU common license
+ * Description		: toString function for ECSE 202 assignment 1
+ * ==================================================================
+ */
+
+
 #include <stdio.h> //include the standard library for the printf() function
 
 int size(char text[]){ // Function to determine the size of a char array

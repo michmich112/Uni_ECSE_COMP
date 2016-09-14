@@ -1,3 +1,13 @@
+/*
+ * ================================================================
+ * Name			: doHist.c
+ * Author		: Michel Cantacuzene
+ * Version		: 0.1
+ * Copyright		: GNU common license
+ * Description		: doHist function for ECSE 202 assignment 1
+ * ================================================================
+ */
+
 #include <stdio.h>
 
 // We know that hist is a 256 wide array
@@ -43,7 +53,7 @@ void displayHist(char hist[], int distinct_chars){ //function to display our res
 	}
 }
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]){ //main function to test our function(s)
 	char text[] = "Jesuisbobdacords";
 	char hist[256];
 	doHist(text,hist);
