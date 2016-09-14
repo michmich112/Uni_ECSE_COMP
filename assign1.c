@@ -74,7 +74,6 @@ void displayHist(char hist[], int distinct_chars){ //function to display our res
 }
 
 int main(int argc, char *argv[]){
-	printf("starting");
 	char text[array_size(argc,argv)];
 	char hist[256];
 	toString(argc,argv,text);
