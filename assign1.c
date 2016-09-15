@@ -77,7 +77,9 @@ int main(int argc, char *argv[]){
 	char text[array_size(argc,argv)];
 	char hist[256];
 	toString(argc,argv,text);
+	printf("%s \n",text);
 	doHist(text,hist);
+	for (int i=0; i<256;i++){printf("%d \t",hist[i]);}
 	displayHist(hist,0);
 	return 0;
 	
