@@ -1,3 +1,13 @@
+/*
+ * =====================================================================
+ * Name			: assignment_revised.c
+ * Author		: Michel Cantacuzene
+ * Version		: 0.1
+ * Copyright		: GNU common license
+ * Description		: main program revised for ECSE 202 assignment 1
+ * =====================================================================
+ */
+
 #include <stdio.h>
 
 void getHist(char text[], char hist[]){
