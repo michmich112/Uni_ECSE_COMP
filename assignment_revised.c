@@ -4,6 +4,7 @@ void getHist(char text[], char hist[]){
 	int i=0;
 	while(text[i] != '\0'){
 		hist[text[i]] += 1;
+		i++;
 	}
 }
 
@@ -18,7 +19,7 @@ int getMax(char hist[]){
 
 void displayHist(char hist[]){
 	int max = getMax(hist);
-	int MAXSCALE = 10;
+	int MAXSCALE = 25;
 	int barlength;
 	for (int i=0;i<256;i++){
 		if (hist[i] != 0){
