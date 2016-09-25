@@ -23,7 +23,7 @@ int size(char text[]){ // Function to determine the size of a char array
 void append(char out[], char in[]){ //function to append a string onto another one
 	int len_out = size(out);
 	int len_in = size(in);
-	for (int i=0; i<=len_in; i++){
+	for (int i=0; i<len_in; i++){
 		out[(len_out+i)] = in[(i)]; //the char array starts at 0 if the string is n characters long, the n'th character will be the EOS (End Of String) character that is why we start appending at len_out (since i=0 on the first itteration).
 	}
 }
@@ -64,7 +64,7 @@ void displayHist(char hist[], int distinct_chars){ //function to display our res
 	int MAXSCALE = 25;
 	int barlength;
 	for(int i=0;i<256;i++){
-		if (hist[i] != 0){
+		if (hist[i] > 0){
 			barlength = (int)(((double)hist[i])/((double)max)*((double)MAXSCALE));
 			printf("%c \t [%d] \t",i,hist[i]);
 			for(int i=0;i<barlength;i++){printf("*");}
@@ -74,12 +74,13 @@ void displayHist(char hist[], int distinct_chars){ //function to display our res
 }
 
 int main(int argc, char *argv[]){ //main function
-	char text[array_size(argc,argv)];
+	int arr_sze = array_size(argc,argv);
+	char text[arr_sze];
+	for (int j =0;j<arr_sze;j++){text[j]='\0';}
 	char hist[256];
 	toString(argc,argv,text);
 	printf("%s \n",text);
 	doHist(text,hist);
-	for (int i=0; i<256;i++){printf("%d \t",hist[i]);}
 	displayHist(hist,0);
 	return 0;
 	

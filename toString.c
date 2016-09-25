@@ -44,9 +44,13 @@ int array_size(int argc, char *argv[]){ //funtion to get the exact number of car
 }
 
 int main(int argc, char *argv[]){ // main fuction to test the final function
-	char text[array_size(argc,argv)]; // we create a char array with the exact size to store all of the characters 
+	int sze = array_size(argc,argv);
+	char text[sze]; // we create a char array with the exact size to store all of the characters 
+	for(int i=0; i<sze; i++){
+		text[i] = '\0';
+	}
 	toString(argc,argv,text); // call upon our toString function to concat all of the seperate strings
-	printf("\n %s \n",text); // Print the final text on the console as to see the result
+	printf("%s \n",text); // Print the final text on the console as to see the result
 	return 0;
 }
 
