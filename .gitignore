@@ -1,6 +1,6 @@
 # Makefile, executable and alle tmp files
-Makefile
-exec
-githelp
+*Makefile
+*exec
+*githelp
 *.swp
 .nfs*
