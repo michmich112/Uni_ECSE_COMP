@@ -1,0 +1,38 @@
+// We start by compiling the program
+michmich:~/workspace/ECSE_assignment_3 $ gcc -o In2p Assignment3-260722701.c
+
+//tests
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 3+4
+postfix: 3 4 +
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 3+4x7-6
+postfix: 3 4 7 x + 6 -
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 3+4^7^9+1
+postfix: 3 4 7 9 ^ ^ + 1 +
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 398-79/6 +8                
+postfix: 398 79 6 / - 8 +
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 
+Error. Empty input.
+Usage: ./executable <operation>
+Use only integers and the folowing operators
+        + for addition
+        - for substraction
+        x for product 
+        / for division
+        ^ for power
+Do not use any unary operators
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 3 ++ 9Error. Unary operator detected.
+Usage: ./executable <operation>
+Use only integers and the folowing operators
+        + for addition
+        - for substraction
+        x for product 
+        / for division
+        ^ for power
+Do not use any unary operators or parentheses
+postfix: 3 9 +
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 9 x 9 + 3-2+7 / 9
+postfix: 9 9 x 3 + 2 - 7 9 / +
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 9875663 x 98774/ 12-3
+postfix: 9875663 98774 x 12 / 3 -
+michmich:~/workspace/ECSE_assignment_3 $ ./In2p 9748^983 - 4556+7/33-2/7+4^8
+postfix: 9748 983 ^ 4556 - 7 33 / + 2 7 / - 4 8 ^ +
